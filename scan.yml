@@ -1,0 +1,11 @@
+name: test-run
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "50 4 * * 1-5"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "GitHub job challa"
+      - run: curl -sI https://www.nseindia.com | head -1 || true
